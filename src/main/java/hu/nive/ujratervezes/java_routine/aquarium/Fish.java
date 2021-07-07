@@ -27,7 +27,7 @@ public abstract class Fish {
 
     public abstract boolean hasMemoryLoss();
 
-    abstract void feed(Fish fish);
+    public abstract void feed(Fish fish);
 
     String status(Fish fish){
         String status = fish.getName() + ", weight: " + fish.getWeight() + ", color: " + fish.getColor() + ", short-term memory loss: " + fish.hasMemoryLoss();

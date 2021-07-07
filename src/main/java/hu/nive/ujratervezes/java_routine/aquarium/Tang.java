@@ -11,7 +11,7 @@ public class Tang extends Fish {
     }
 
     @Override
-    void feed(Fish fish) {
+    public void feed(Fish fish) {
         this.weight = fish.getWeight() + 1;
     }
 }

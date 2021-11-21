@@ -42,6 +42,7 @@ public class UseFiles {
         catch (IOException e) {
             throw new IllegalStateException("Can't read file", e);
         }
+
         return kennel;
     }
 
@@ -58,5 +59,19 @@ public static void writeDogsFile(Dog dog){
         System.out.println("HIBA");
     }
 }
+    public void makeDogFile()
+    {
+        RandomAccessFile file;
+
+        try
+        {
+            file = new RandomAccessFile("dogs.txt","r");
+            file.close();
+        }
+        catch( IOException e )
+        {
+            System.err.println("HIBA");
+        }
+    }
 
 }

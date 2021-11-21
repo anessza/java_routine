@@ -57,6 +57,11 @@ public class Kennel {
         foundDog.play(hour);
     }
 
+    public void feedADog(String name) {
+        Dog foundDog = findByName(name);
+        foundDog.feed();
+    }
+
     public List<String> getHappyDogNames(int happinessRate) {
         List<String> mostHappinestDogs = new ArrayList<>();
         for (Dog dog : dogs) {

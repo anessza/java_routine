@@ -4,7 +4,7 @@ package dogs;
 public class DogsMain {
     public static void main(String[] args) {
 
-        UseFiles useFiles = new UseFiles();
+ /*       UseFiles useFiles = new UseFiles();
         Kennel kennel = useFiles.readDogsFile();
         Husky husky = new Husky("Hopihe");
         kennel.addDog(husky);
@@ -17,7 +17,9 @@ public class DogsMain {
         kennel.feedAll();
 
         System.out.println(kennel.getHappyDogNames(3));
-        System.out.println(kennel);
+        System.out.println(kennel);*/
+        Menu menu = new Menu();
+        menu.menu();
 
 
     }

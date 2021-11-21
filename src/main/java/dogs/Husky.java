@@ -1,10 +1,10 @@
 package dogs;
 
 public class Husky extends Dog {
-    private static final String type = "Husky";
+    private static final String breed = "Husky";
 
     public Husky(String name) {
-        super(name,type );
+        super(name,breed );
     }
 
 

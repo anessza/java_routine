@@ -1,7 +1,9 @@
 package dogs;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -20,27 +22,41 @@ public class UseFiles {
             while ((line = br.readLine()) != null) {
                 int i = line.indexOf(SEPARATOR);
 
-                String type = line.substring(0, i);
+                String breed = line.substring(0, i);
                 String dogName = line.substring(i+1);
 
-                if (type.equals("Beagle")) {
+                if (breed.equals("Beagle")) {
                     Beagle beagle = new Beagle(dogName);
                     kennel.addDog(beagle);
                 }
 
-                if (type.equals("Husky")) {
+                if (breed.equals("Husky")) {
                     Husky husky = new Husky(dogName);
                     kennel.addDog(husky);
                 }
             }
-            return kennel;
-
+        }
+        catch(FileNotFoundException fnfe){
+            System.out.println("Can't find file: " + fnfe.getMessage());
         }
         catch (IOException e) {
             throw new IllegalStateException("Can't read file", e);
         }
+        return kennel;
     }
 
-
+public static void writeDogsFile(Dog dog){
+    RandomAccessFile dogs;
+    try
+    {
+        dogs = new RandomAccessFile("dogs.txt","rw");
+        dogs.seek( dogs.length());
+        dogs.writeBytes(dog.getName() + SEPARATOR + dog.getBreed() + "\n");
+        dogs.close();
+    }
+    catch( IOException e ){
+        System.out.println("HIBA");
+    }
+}
 
 }

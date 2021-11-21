@@ -1,10 +1,10 @@
 package dogs;
 
 public class Beagle extends Dog{
-    private static final String type = "Beagle";
+    private static final String breed = "Beagle";
 
     public Beagle(String name) {
-        super(name, type);
+        super(name, breed);
     }
 
 @Override

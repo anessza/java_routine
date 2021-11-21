@@ -6,6 +6,12 @@ public class DogsMain {
 
         UseFiles useFiles = new UseFiles();
         Kennel kennel = useFiles.readDogsFile();
+        Husky husky = new Husky("Hopihe");
+        kennel.addDog(husky);
+        UseFiles.writeDogsFile(husky);
+        Beagle beagle = new Beagle("Stefi");
+        kennel.addDog(beagle);
+        UseFiles.writeDogsFile(beagle);
 
         kennel.playWith("Mazsi", 4);
         kennel.feedAll();

@@ -67,6 +67,11 @@ public class Kennel {
         return mostHappinestDogs;
     }
 
+    @Override
+    public String toString() {
+        return "Kennel{ DOGS: "+ "\n" + dogs +
+                '}';
+    }
 }
 
 

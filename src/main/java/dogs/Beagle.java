@@ -1,9 +1,10 @@
 package dogs;
 
 public class Beagle extends Dog{
+    private static final String type = "Beagle";
 
     public Beagle(String name) {
-        super(name);
+        super(name, type);
     }
 
 @Override

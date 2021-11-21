@@ -1,20 +1,17 @@
 package dogs;
 
-import java.util.List;
-
 
 public class DogsMain {
     public static void main(String[] args) {
 
-        Kennel kennel = new Kennel();
-        List<Dog> dogList;
+        UseFiles useFiles = new UseFiles();
+        Kennel kennel = useFiles.readDogsFile();
 
-
-
-        kennel.playWith("Morzsi", 4);
+        kennel.playWith("Mazsi", 4);
         kennel.feedAll();
+
         System.out.println(kennel.getHappyDogNames(3));
-        System.out.println(kennel.getDogs());
+        System.out.println(kennel);
 
 
     }

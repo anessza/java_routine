@@ -1,9 +1,12 @@
 package dogs;
 
 public class Husky extends Dog {
+    private static final String type = "Husky";
+
     public Husky(String name) {
-        super(name);
+        super(name,type );
     }
+
 
 @Override
     public void feed() {

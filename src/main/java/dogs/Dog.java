@@ -26,10 +26,20 @@ Ez két feladatnak számít, első a Dog, Husky Beagle és Kennel osztályok lé
 public abstract class Dog {
     private String name;
     public int happiness;
+    private String type;
 
-    public Dog(String name) {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Dog(String name, String type) {
         this.name = name;
         this.happiness = 0;
+        this.type = type;
     }
 
     public String getName() {
@@ -46,9 +56,10 @@ public abstract class Dog {
 
     @Override
     public String toString() {
-        return "Dog{" +
-                "name='" + name + '\'' +
-                ", happiness=" + happiness +
-                '}';
+        return
+                name + "(" +
+                type + ") " +
+                "happiness = " + happiness +
+                        ";" + "\n";
     }
 }

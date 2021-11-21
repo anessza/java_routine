@@ -7,9 +7,9 @@ public class Menu {
 
         UseFiles useFiles = new UseFiles();
 
-        int muvelet = 0;
+        int muvelet = -1;
         Scanner be = new Scanner(System.in);
-        do  {
+
             System.out.println("1.)Read dogs.txt");
             System.out.println("2.)Make dogs.txt");
             System.out.println("3.)Add dog to Kennel");
@@ -20,6 +20,7 @@ public class Menu {
             System.out.println("8.)Play a dog");
             System.out.println("9.)Find most happinest dog(s)");
             System.out.println("Hint other key to end game");
+
             muvelet = be.nextInt();
 
             if (muvelet < 1 || muvelet > 9) {
@@ -59,7 +60,7 @@ public class Menu {
                             kennel.addDog(husky);
                             UseFiles.writeDogsFile(husky);
                         }
-
+                        System.out.println(kennel);
                         break;
                     }
 
@@ -112,7 +113,6 @@ public class Menu {
                     }
 
                 }
-            }
-        } while (muvelet != 0);
+        }
     }
 }

@@ -52,7 +52,7 @@ public static void writeDogsFile(Dog dog){
     {
         dogs = new RandomAccessFile("dogs.txt","rw");
         dogs.seek( dogs.length());
-        dogs.writeBytes(dog.getName() + SEPARATOR + dog.getBreed() + "\n");
+        dogs.writeBytes(dog.getBreed() + SEPARATOR + dog.getName() + "\n");
         dogs.close();
     }
     catch( IOException e ){

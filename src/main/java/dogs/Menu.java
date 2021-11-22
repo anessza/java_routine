@@ -9,7 +9,7 @@ public class Menu {
 
         int muvelet = -1;
         Scanner be = new Scanner(System.in);
-
+while (muvelet != 0){
             System.out.println("1.)Read dogs.txt");
             System.out.println("2.)Make dogs.txt");
             System.out.println("3.)Add dog to Kennel");
@@ -25,23 +25,17 @@ public class Menu {
 
             if (muvelet < 1 || muvelet > 9) {
                 System.out.println("Érvénytelen művelet.");
-                return;
             }
 
             else {
                 switch (muvelet) {
-                    case 1: {
+                    case 1 -> {
                         Kennel kennel = useFiles.readDogsFile();
                         System.out.println(kennel);
-                        break;
                     }
+                    case 2 -> useFiles.makeDogFile();
 
-                    case 2: {
-                        useFiles.makeDogFile();
-                        break;
-                    }
-
-                    case 3: {
+                    case 3 -> {
                         Kennel kennel = useFiles.readDogsFile();
                         System.out.println("Add meg a kutya nevét : \n");
                         Scanner be1 = new Scanner(System.in);
@@ -49,6 +43,7 @@ public class Menu {
                         Scanner be2 = new Scanner(System.in);
                         System.out.println("Add meg a kutya fajtáját : \n");
                         String breed = be2.nextLine();
+
                         if (breed.equals("Beagle")) {
                             Beagle beagle = new Beagle(dogName);
                             kennel.addDog(beagle);
@@ -61,40 +56,32 @@ public class Menu {
                             UseFiles.writeDogsFile(husky);
                         }
                         System.out.println(kennel);
-                        break;
                     }
-
-                    case 4: {
+                    case 4 -> {
                         Kennel kennel = useFiles.readDogsFile();
                         System.out.println(kennel.toString());
-                        break;
                     }
-
-                    case 5: {
+                    case 5 -> {
                         Kennel kennel = useFiles.readDogsFile();
                         System.out.println("Add meg a keresett kutya nevét : \n");
                         Scanner be1 = new Scanner(System.in);
                         String dogName = be1.nextLine();
                         kennel.findByName(dogName);
-                        break;
                     }
-
-                    case 6: {
+                    case 6 -> {
                         Kennel kennel = useFiles.readDogsFile();
                         System.out.println("Melyik kutyát szeretnéd megetetni? : \n");
                         Scanner be1 = new Scanner(System.in);
                         String dogName = be1.nextLine();
                         kennel.feedADog(dogName);
-                        break;
+                        useFiles.rewriteKennelInDogsFile(kennel);
                     }
-
-                    case 7: {
+                    case 7 -> {
                         Kennel kennel = useFiles.readDogsFile();
                         kennel.feedAll();
-                        break;
+                        useFiles.rewriteKennelInDogsFile(kennel);
                     }
-
-                    case 8: {
+                    case 8 -> {
                         Kennel kennel = useFiles.readDogsFile();
                         System.out.println("Melyik kutyát szeretnél játszani? : \n");
                         Scanner be1 = new Scanner(System.in);
@@ -103,16 +90,14 @@ public class Menu {
                         Scanner be2 = new Scanner(System.in);
                         int hour = be2.nextInt();
                         kennel.playWith(dogName, hour);
-                        break;
+                        useFiles.rewriteKennelInDogsFile(kennel);
                     }
-
-                    case 9: {
+                    case 9 -> {
                         Kennel kennel = useFiles.readDogsFile();
                         System.out.println(kennel.getHappyDogNames(3));
-                        break;
                     }
-
                 }
+            }
         }
     }
 }

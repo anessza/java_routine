@@ -67,6 +67,7 @@ while (muvelet != 0){
                         Scanner be1 = new Scanner(System.in);
                         String dogName = be1.nextLine();
                         kennel.findByName(dogName);
+                        System.out.println(dogName + " kutya tagja a Kennelnek." );
                     }
                     case 6 -> {
                         Kennel kennel = useFiles.readDogsFile();

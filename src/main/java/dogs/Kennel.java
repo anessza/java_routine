@@ -42,6 +42,7 @@ public class Kennel {
                 }
             }
             if (foundDog == null) {
+                System.out.println(name + " kutya nem tagja a Kennelnek.");
                 throw new IllegalArgumentException("Can't find dog");
             }
 

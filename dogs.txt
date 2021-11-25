@@ -1,4 +1,6 @@
-Husky Alma+13
-Beagle Ada+14
-Beagle Bogar+4
-Husky Paci+17
+Husky Alma+17
+Beagle Ada+16
+Beagle Bogar+6
+Husky Paci+21
+Beagle Bence+14
+Husky Stefi+4

@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
@@ -97,6 +99,22 @@ public static void writeDogsFile(Dog dog){
         catch( IOException e ){
             System.out.println("HIBA");
         }
-
     }
+
+    public static List<Dog> listDogsBy(Kennel kennel, String word, ListBy listBy) {
+        List<Dog> listDogs = new ArrayList<>();
+        for (Dog dog : kennel.dogs) {
+            if (listBy.toString().equals("BREED") && dog.getBreed().equals(word)) {
+                listDogs.add(dog);
+            }
+            if (listBy.toString().equals("NAME") && dog.getName().equals(word)) {
+                listDogs.add(dog);
+            }
+            if (listBy.toString().equals("HAPPINESS") && dog.getHappiness() == parseInt(word)) {
+                listDogs.add(dog);
+            }
+        }
+        return listDogs;
+    }
+
 }
